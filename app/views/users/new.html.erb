@@ -1,7 +1,7 @@
-<%= form_for @user do |f| %>
+REGISTER <br/><br/>
+
+<%= form_with model: @user do |f| %>
   <%= f.label(:username, 'Username Input:') %>
   <%= f.text_field(:username, required: true) %>
-
   <%= f.submit('Login') %>
-
 <% end %>

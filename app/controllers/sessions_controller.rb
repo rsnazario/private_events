@@ -1,13 +1,15 @@
 class SessionsController < ApplicationController
   def new
-    cookies[:current_user] = 'nickname123'
   end
 
   def create
-    cookies[:current_user] = 'nickname123'
+    if x = User.find_by(username: params[:usuario_entrando])
+      cookies[:current_user] = x.username
+    end
+    redirect_to root_path
   end
   
   def destroy
-
+    cookies.delete(:current_user)
   end
 end

@@ -1,0 +1,8 @@
+<br/><br/><br/><br/><br/>
+
+LOG IN 
+<%= form_with url: sessions_path do |s| %>
+  <%= s.label(:usuario_entrando, "Input Username:") %>
+  <%= s.text_field(:usuario_entrando) %>
+  <%= s.submit('Log in') %>
+<% end %>
