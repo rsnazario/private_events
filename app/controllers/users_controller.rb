@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  def show
+    @wahaa = User.find(params[:id])
+  end
+
   def new
     @user = User.new
   end
@@ -6,10 +10,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     @user.save
-  end
-
-  def show
-    @user.find(params[:id])
+    redirect_to new_session_path
   end
 
   private 

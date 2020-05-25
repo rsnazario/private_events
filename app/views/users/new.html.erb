@@ -2,7 +2,7 @@
 
 <%= form_with(model: @user) do |form| %>
   <%= form.label(:username, 'Create Username: ') %>
-  <%= form.text_field(:username, required: true) %>
+  <%= form.text_field(:username) %>
 
-  <%= form.submit('Login') %>
+  <%= form.submit('Create user') %>
 <% end %>
