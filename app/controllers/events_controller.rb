@@ -1,12 +1,12 @@
 class EventsController < ApplicationController
   def new
-    @evento = Event.new
+    @evento = x.events.build
   end
 
   def create
-    @evento = Event.new(event_params)
-    @evento.save
-    redirect_to @evento
+    # @evento =  x.events.build(event_params)
+    # @evento.save
+    # redirect_to @evento
   end
   
   def show
@@ -17,6 +17,6 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:name, :when)
+    params.require(:event).permit(:name, :when, :user_id)
   end
 end
