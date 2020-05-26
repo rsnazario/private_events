@@ -4,14 +4,14 @@ class EventsController < ApplicationController
   end
 
   def create
-    @evento = Event.build(event_params)
+    @evento = Event.new(event_params)
     @evento.save
     redirect_to @evento
   end
   
   def show
-    # @evento = Event.find(params[:id])
-    @evento.id
+    @evento = Event.find(params[:id])
+    # @evento.id
   end
   
   private
