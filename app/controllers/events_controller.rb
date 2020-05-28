@@ -6,11 +6,13 @@ class EventsController < ApplicationController
 
   def create
     # current_user = User.find_by(id: cookies[:current_user_id])
-    @event = current_user.event_creator.create(event_params)
+    # @event = current_user.event_creator.create(event_params)
+    @event = current_user.event_creator.build(event_params)
+    @event.save
   end
   
   def show
-    @evento = Event.find(params[:id])
+    @event = Event.find(params[:id])
   end
   
   private
