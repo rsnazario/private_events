@@ -3,8 +3,8 @@ class SessionsController < ApplicationController
 
   def create
     if userx = User.find_by(username: params[:username_in])
-      cookies[:current_user] = userx.id
-      redirect_to user_path(cookies[:current_user])
+      cookies[:current_user_id] = userx.id
+      redirect_to user_path(cookies[:current_user_id])
     end
   end
 

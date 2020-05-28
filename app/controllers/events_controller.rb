@@ -1,11 +1,12 @@
 class EventsController < ApplicationController
   def new
-    current_user = User.find_by(id: cookies[:current_user])
+    current_user = User.find_by(id: cookies[:current_user_id])
     @event = current_user.event_creator.build
   end
 
   def create
-    @event = cookies[:current_user].event_creator.build(event_params)
+    current_user = User.find_by(id: cookies[:current_user_id])
+    @event = current_user.event_creator.create(event_params)
   end
   
   def show
