@@ -1,6 +1,5 @@
 class User < ApplicationRecord
-  has_many :parties, class_name: 'Event'
+  has_many :event_creator,
+    class_name: 'Event',
+    foreign_key: 'creator_id'
 end
-
-
-# show all evemts

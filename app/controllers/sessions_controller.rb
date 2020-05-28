@@ -1,15 +1,11 @@
 class SessionsController < ApplicationController
-  def new
-  end
+  def new; end
 
   def create
-    if x = User.find_by(username: params[:usuario_entrando])
-      cookies[:current_user] = x.id
-    else
-      puts 'aiosjas'
+    if userx = User.find_by(username: params[:username_in])
+      cookies[:current_user] = userx.id
+      redirect_to user_path(cookies[:current_user])
     end
-    # users/1
-    redirect_to user_path(x.id)
   end
 
   def destroy

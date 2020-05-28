@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def show
-    @wahaa = User.find(params[:id])
+    @show_user = User.find(params[:id])
   end
 
   def new

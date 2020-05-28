@@ -1,22 +1,19 @@
 class EventsController < ApplicationController
   def new
-    @evento = x.events.build
+    current_user = User.find_by(id: cookies[:current_user])
+    @event = current_user.event_creator.build
   end
 
   def create
-    # @evento =  x.events.build(event_params)
-    # @evento.save
-    # redirect_to @evento
+    @event = cookies[:current_user].event_creator.build(event_params)
   end
   
   def show
     @evento = Event.find(params[:id])
-    # @evento.id
   end
   
   private
-
   def event_params
-    params.require(:event).permit(:name, :when, :user_id)
+    params.require(:event).permit(:name, :when, :creator_id)
   end
 end
