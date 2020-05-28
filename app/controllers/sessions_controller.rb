@@ -9,6 +9,6 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    cookies.delete(:current_user)
+    cookies.delete(:current_user_id)
   end
 end
