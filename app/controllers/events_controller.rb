@@ -9,6 +9,7 @@ class EventsController < ApplicationController
     # @event = current_user.event_creator.create(event_params)
     @event = current_user.event_creator.build(event_params)
     @event.save
+    redirect_to user_path(current_user.id)
   end
   
   def show
