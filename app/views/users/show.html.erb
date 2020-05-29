@@ -3,11 +3,13 @@
 <%= @show_user.username %>
 
 <%= link_to 'Create Event', new_event_path %>
+<%= link_to 'All events', events_path %> <br/> <br/>
 
+<h3> Your Created Events </h3>
 <ul>
-  <%= @show_user.event_creator.each do |blabla| %>
+  <% @show_user.event_creator.each do |blabla| %>
     <li>
-      <p> <%= blabla.name %> </p>
+      <p> <%= link_to blabla.name, event_path(blabla.id) %> </p>
     </li>
   <% end %>
 </ul>
