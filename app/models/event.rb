@@ -3,4 +3,6 @@ class Event < ApplicationRecord
   
   has_many :attendances, foreign_key: :attended_event_id, class_name: 'Attendance' # guests will come
   has_many :guests, through: :attendances, source: :attendee
+
+  scope :past, -> { where('event_when > ?', DateTime.now) }
 end

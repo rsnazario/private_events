@@ -15,9 +15,19 @@
 
 
 <h3> Your Already Attended Events </h3>
+<ul>
 <% @upcoming_events.each do |event| %>
-  <%= event.name %>
+  <li>
+    <%= event.name %>
+  </li>
 <% end %>
-
+</ul>
 
 <h3> Your To-Go Events </h3>
+<ul>
+<% @previous_events.each do |event| %>
+  <li>
+    <%= event.name %>
+  </li>
+<% end %>
+</ul>

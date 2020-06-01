@@ -1,5 +1,23 @@
 <h1> All Events Created </h1>
 
-<% @event.each do |a| %>
-  <p> <%= link_to a.name, event_path(a.id)  %> </p>
+<h3> Already Gone Events </h3>
+<ul>
+<% @upcoming_events.each do |event| %>
+  <li>
+    <%= event.name %>
+  </li>
+<% end %>
+</ul>
+
+<h3> Events To Happen </h3>
+<ul>
+<% @previous_events.each do |event| %>
+  <li>
+    <%= event.name %>
+  </li>
+<% end %>
+</ul>
+
+<% Event.past.each do |evento| %>
+  <p> <%= evento.name %> </p>
 <% end %>
