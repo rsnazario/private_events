@@ -1,11 +1,13 @@
-<h1> CREATE YOUR EVENT </h1>
+<h1> MAKE YOUR EVENT </h1>
 
 <%= form_with(model: @event) do |party| %>
-  <%= party.label(:name, "Name Your Event: ") %>
+  <%= party.label(:name, "Your Event Name: ") %>
   <%= party.text_field(:name) %>
+  <br><br>
 
-  <%= party.label(:when, "When is it happening?" ) %>
+  <%= party.label(:when, "When will happen?" ) %>
   <%= party.datetime_field(:when) %>
+  <br><br>
 
   <%= party.submit("Create Event") %>
 <% end %>

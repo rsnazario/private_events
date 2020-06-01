@@ -21,9 +21,12 @@
       </div>
 
       <div>
-        <%= link_to 'REGISTER', new_user_path %>
-        <%= link_to 'LOGIN', new_session_path %>
-        <%= link_to 'LOGOUT', new_session_path, method: :delete %>
+        <% if current_user %>
+          <%= link_to 'LOGOUT', new_session_path, method: :delete %>
+        <% else %>
+          <%= link_to 'REGISTER', new_user_path %>
+          <%= link_to 'LOGIN', new_session_path %>
+        <% end %>
       </div>
     </nav>
 

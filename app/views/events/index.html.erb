@@ -1,24 +1,5 @@
 <h1> All Events</h1>
 
-<h3> Already Gone Events </h3>
-<ul>
-<% @upcoming_events.each do |event| %>
-  <li>
-    <%= event.name %>
-  </li>
-<% end %>
-</ul>
-
-<h3> Events To Happen </h3>
-<ul>
-<% @previous_events.each do |event| %>
-  <li>
-    <%= event.name %>
-  </li>
-<% end %>
-</ul>
-
-
 <h3>Events comming</h3>
 <% Event.upcoming.each do |evento| %>
   <p> <%= evento.name %> </p>
