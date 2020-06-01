@@ -1,4 +1,4 @@
-<h1> All Events Created </h1>
+<h1> All Events</h1>
 
 <h3> Already Gone Events </h3>
 <ul>
@@ -18,6 +18,13 @@
 <% end %>
 </ul>
 
+
+<h3>Events comming</h3>
+<% Event.upcoming.each do |evento| %>
+  <p> <%= evento.name %> </p>
+<% end %>
+
+<h3>Past Events</h3>
 <% Event.past.each do |evento| %>
   <p> <%= evento.name %> </p>
 <% end %>

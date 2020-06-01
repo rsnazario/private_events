@@ -21,10 +21,10 @@ class UsersController < ApplicationController
   end
 
   def future
-    @show_user.attended_events.where('events.event_when < ?', Time.now)
+    @show_user.attended_events.where('events.event_when < ?', DateTime.now)
   end
   
   def previous
-    @show_user.attended_events.where('events.event_when > ?', Time.now)
+    @show_user.attended_events.where('events.event_when > ?', DateTime.now)
   end
 end
