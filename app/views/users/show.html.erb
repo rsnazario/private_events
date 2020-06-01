@@ -12,16 +12,22 @@
   <% end %>
 </ul>
 
+
+
 <h3> Your Already Attended Events </h3>
-<ul>
-  <% @show_user.attended_events.each do |bla| %>
-    <li>
-      <% if bla.when < DateTime.now %>
-        <p> <%= link_to bla.name, event_path(bla.id) %> </p>
-      <% end %>
-    </li>
+<% upcoming_events.each do |event| %>
+  <%= event.name %>
+<% end %>
+
+
+<!--
+<% @show_user.attended_events.each do |bla| %>
+  <% if bla.when < DateTime.now %>
+    <%= link_to bla.name, event_path(bla.id) %>
   <% end %>
-</ul>
+<% end %>
+-->
+
 
 <h3> Your To-Go Events </h3>
 <ul>
