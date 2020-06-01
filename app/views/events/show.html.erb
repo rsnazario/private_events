@@ -1,8 +1,8 @@
 <h1> <%= @event.name %> <br/> </h1>
 <small> Event created by: <%= @event.creator.username%> </small>
+
+
 <h3> List of Attendants </h3>
 <% @event.guests.each do |cada| %>
   <p> <%= cada.username %> </p>
 <% end %>
-
-<%= link_to 'Back', user_path(cookies[:current_user_id]) %>

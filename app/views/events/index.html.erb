@@ -3,5 +3,3 @@
 <% @event.each do |a| %>
   <p> <%= link_to a.name, event_path(a.id)  %> </p>
 <% end %>
-
-<%= link_to 'Back', user_path(current_user.id) %>

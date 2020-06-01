@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :events, only: [:index, :new, :create, :show]
   resources :attendances, only: [:create]
-  root "sessions#new"
+  root "events#index"
 end

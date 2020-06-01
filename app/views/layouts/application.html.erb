@@ -14,12 +14,16 @@
       <div>
         <%= link_to 'See all events', events_path %>
         <%= link_to 'Create Event', new_event_path %>
-        <%= link_to 'Profile', user_path(current_user) %>
+
+        <% if current_user %>
+          <%= link_to 'Profile', user_path(current_user) %>
+        <% end %>
       </div>
 
       <div>
         <%= link_to 'REGISTER', new_user_path %>
         <%= link_to 'LOGIN', new_session_path %>
+        <%= link_to 'LOGOUT', new_session_path, method: :delete %>
       </div>
     </nav>
 
