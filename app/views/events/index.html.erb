@@ -1,4 +1,5 @@
 <h1> All Events Created </h1>
+
 <% @event.each do |a| %>
   <p> <%= link_to a.name, event_path(a.id)  %> </p>
 <% end %>
