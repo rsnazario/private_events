@@ -6,14 +6,10 @@ class EventsController < ApplicationController
   end
 
   def new
-    # current_user = User.find_by(id: cookies[:current_user_id])
     @event = current_user.event_creator.build
-
   end
 
   def create
-    # current_user = User.find_by(id: cookies[:current_user_id])
-    # @event = current_user.event_creator.create(event_params)
     @event = current_user.event_creator.build(event_params)
     @event.save
     redirect_to user_path(current_user.id)
@@ -25,7 +21,7 @@ class EventsController < ApplicationController
   
   private
   def event_params
-    params.require(:event).permit(:name, :when)
+    params.require(:event).permit(:name, :description, :event_when)
   end
 
   def future
