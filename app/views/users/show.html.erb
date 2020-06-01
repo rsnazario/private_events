@@ -1,6 +1,4 @@
-<h1>Welcome</h1>
-
-<%= @show_user.username %>
+<h1>Welcome <%= @show_user.username %> </h1>
 
 <%= link_to 'Create Event', new_event_path %>
 <%= link_to 'All events', events_path %> <br/> <br/>
@@ -10,6 +8,28 @@
   <% @show_user.event_creator.each do |blabla| %>
     <li>
       <p> <%= link_to blabla.name, event_path(blabla.id) %> </p>
+    </li>
+  <% end %>
+</ul>
+
+<h3> Your Already Attended Events </h3>
+<ul>
+  <% @show_user.attended_events.each do |bla| %>
+    <li>
+      <% if bla.when < DateTime.now %>
+        <p> <%= link_to bla.name, event_path(bla.id) %> </p>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+
+<h3> Your To-Go Events </h3>
+<ul>
+  <% @show_user.attended_events.each do |bla| %>
+    <li>
+      <% if bla.when > DateTime.now %>
+        <p> <%= link_to bla.name, event_path(bla.id) %> </p>
+      <% end %>
     </li>
   <% end %>
 </ul>
