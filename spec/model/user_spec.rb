@@ -10,10 +10,9 @@ RSpec.describe User, :type => :model do
     end
   end
 
-  context "Check Associations" do
-    it "should exist" do
-      link = user1.event_creator.create(name: 'event1')
-      expect(event1.creator_id).to eq(1)
+  context "Associations" do
+    it "new event should retrieve author id" do
+      user1.event_creator.create(name: 'test association 1')
     end
   end
 end
