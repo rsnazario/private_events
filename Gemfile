@@ -18,11 +18,13 @@ gem 'turbolinks', '~> 5'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
-  gem 'selenium-webdriver'
   gem 'sqlite3'
 
-  # gem 'capybara', '>= 2.15'
+  gem 'capybara', '>= 2.15'
+  gem 'selenium-webdriver'
+  gem 'webdrivers'
   # gem 'chromedriver-helper'
+  # gem 'database_cleaner'
 end
 
 group :development do

@@ -18,7 +18,7 @@
 ## Features
 
 <ul>
-  <li>Visitor can see events and make an account</li>
+  <li>av Visitor can see events and make an account</li>
   <li>Users can publish events and join in others</li>
   <li>Each section has the properly page to display the informations</li>
 </ul>
