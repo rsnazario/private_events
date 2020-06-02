@@ -2,10 +2,10 @@
 
 <h3>Events comming</h3>
 <% Event.upcoming.each do |evento| %>
-  <p> <%= evento.name %> </p>
+  <%= link_to evento.name, event_path(evento.id) %> <br>
 <% end %>
 
 <h3>Past Events</h3>
 <% Event.past.each do |evento| %>
-  <p> <%= evento.name %> </p>
+  <%= link_to evento.name, event_path(evento.id) %> <br>
 <% end %>
