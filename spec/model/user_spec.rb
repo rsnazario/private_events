@@ -11,8 +11,9 @@ RSpec.describe User, :type => :model do
   end
 
   context "Associations" do
-    it "new event should retrieve author id" do
-      user1.event_creator.create(name: 'test association 1')
+    it "new event should retrieve creator id" do
+      expect { user1.event_creator.create!(creator_id: 1) }
+        .not_to raise_error
     end
   end
 end
