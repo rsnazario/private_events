@@ -19,30 +19,27 @@ gem 'turbolinks', '~> 5'
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'sqlite3'
+end
 
-  gem 'capybara', '>= 2.15'
+group :test do
+  gem 'rspec-rails'
+  gem 'capybara'
+
   gem 'selenium-webdriver'
   gem 'webdrivers'
-  # gem 'chromedriver-helper'
-  # gem 'database_cleaner'
+  # gem 'chromedriver-helper' # DEPRECATED!
 end
 
 group :development do
-  gem 'rubocop'
-  gem 'rspec-rails', ">= 3.9.0"
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'web-console', '>= 3.3.0'
 
-  # traceback
+  gem 'rubocop'
   gem "better_errors"
   gem "binding_of_caller"
 end
-
-# group :production do
-#   gem 'pg'
-# end
 
 # Windows compatible
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
