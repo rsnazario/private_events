@@ -18,7 +18,7 @@
 ## Features
 
 <ul>
-  <li>av Visitor can see events and make an account</li>
+  <li>Visitor can see events and make an account</li>
   <li>Users can publish events and join in others</li>
   <li>Each section has the properly page to display the informations</li>
 </ul>
@@ -43,7 +43,7 @@ To use this program, you will need install:
 #### Get a local copy
 Now you need a copy of this application, if you are using Git:
 ```js
-git clone git@github.com:sevlamare/private-events.git
+git clone git@github.com:rsnazario/private_events.git
 ```
 Otherwise just hit (Download Zip) on green button (Clone or Download) at top of this page.
 
