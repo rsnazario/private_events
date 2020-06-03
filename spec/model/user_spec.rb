@@ -1,7 +1,6 @@
 require "rails_helper"
 
 RSpec.describe User, :type => :model do
-  # Creating objects with let WONT SAVE ON OUR DB
   let(:user1) { User.create!(username: 'user1') }
 
   context "Create a user" do
