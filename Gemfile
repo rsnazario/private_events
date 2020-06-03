@@ -22,11 +22,11 @@ group :development, :test do
 end
 
 group :test do
-  gem 'rspec-rails'
   gem 'capybara'
+  gem 'database_cleaner'
+  gem 'rspec-rails'
   gem 'selenium-webdriver'
   gem 'webdrivers'
-  gem 'database_cleaner'
 end
 
 group :development do
@@ -35,9 +35,9 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'web-console', '>= 3.3.0'
 
+  gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'rubocop'
-  gem "better_errors"
-  gem "binding_of_caller"
 end
 
 # Windows compatible

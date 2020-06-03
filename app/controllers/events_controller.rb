@@ -14,12 +14,13 @@ class EventsController < ApplicationController
     @event.save
     redirect_to user_path(current_user.id)
   end
-  
+
   def show
     @event = Event.find(params[:id])
   end
-  
+
   private
+
   def event_params
     params.require(:event).permit(:name, :description, :event_when)
   end
@@ -27,7 +28,7 @@ class EventsController < ApplicationController
   def future
     Event.where('events.event_when < ?', Time.now)
   end
-  
+
   def previous
     Event.where('events.event_when > ?', Time.now)
   end

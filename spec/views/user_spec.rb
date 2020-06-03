@@ -4,7 +4,6 @@ require 'rails_helper'
 RSpec.describe 'Main flow', type: :system do
   describe 'New user' do
     it 'Make account, login, create post and logout' do
-
       # ACCESS HOME PAGE
       visit('/')
       sleep 1
@@ -12,7 +11,7 @@ RSpec.describe 'Main flow', type: :system do
       # GO TO REGISTRATION PAGE
       click_link('REGISTER')
       sleep 1
-    
+
       # CREATE NEW USER
       fill_in('user[username]', with: 'asd')
       sleep 1
@@ -38,7 +37,7 @@ RSpec.describe 'Main flow', type: :system do
       # CREATE NEW EVENT
       fill_in('event[name]', with: 'RSPEC TESTING')
       sleep 1
-      fill_in('event[event_when]', with: Time.now+1.month)
+      fill_in('event[event_when]', with: Time.now + 1.month)
       sleep 1
       fill_in('event[description]', with: 'Finally All Have Been Tested')
       sleep 1

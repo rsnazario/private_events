@@ -14,7 +14,8 @@ class UsersController < ApplicationController
     redirect_to new_session_path if @user.save
   end
 
-  private 
+  private
+
   def user_params
     params.require(:user).permit(:username)
   end
@@ -22,7 +23,7 @@ class UsersController < ApplicationController
   def future
     @show_user.attended_events.where('events.event_when < ?', DateTime.now)
   end
-  
+
   def previous
     @show_user.attended_events.where('events.event_when > ?', DateTime.now)
   end
