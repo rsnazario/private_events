@@ -1,7 +1,7 @@
 <h1>REGISTER</h1>
 
 <%= form_with(model: @user) do |form| %>
-  <%= form.label(:username_new, 'Create Username: ') %>
-  <%= form.text_field(:username_new) %>
+  <%= form.label(:username, 'Create Username: ') %>
+  <%= form.text_field(:username) %>
   <%= form.submit('Make it!') %>
 <% end %>
