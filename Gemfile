@@ -17,17 +17,16 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'turbolinks', '~> 5'
 
 group :development, :test do
-  # gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'sqlite3'
 end
 
 group :test do
   gem 'rspec-rails'
   gem 'capybara'
-
   gem 'selenium-webdriver'
   gem 'webdrivers'
-  # gem 'chromedriver-helper' # DEPRECATED!
+  gem 'database_cleaner'
 end
 
 group :development do
@@ -42,4 +41,4 @@ group :development do
 end
 
 # Windows compatible
-# gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
