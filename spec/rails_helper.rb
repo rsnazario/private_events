@@ -7,17 +7,14 @@ require 'capybara/rspec'
 require 'webdrivers/chromedriver'
 # include Capybara::DSL
 
+
 # Capybara.register_driver :selenium_chrome do |app|
-#   Capybara::Selenium::Driver.new(app, browser: :chrome)
-# end
-
-# Capybara.javascript_driver = :selenium_chrome
-
 Capybara.register_driver :chrome do |app|
   Capybara::Selenium::Driver.new(app, browser: :chrome)
 end
 
 Capybara.default_driver = :selenium_chrome
+# Capybara.javascript_driver = :selenium_chrome
 
 
 # Capybara.register_driver :headless_chrome do |app|
@@ -36,7 +33,7 @@ Capybara.default_driver = :selenium_chrome
 # Capybara.javascript_driver = :headless_chrome
 
 
-# If you are not using ActiveRecord, you can remove these lines.
+# If not using ActiveRecord, can remove these lines.
 begin
   ActiveRecord::Migration.maintain_test_schema!
 rescue ActiveRecord::PendingMigrationError => e
@@ -44,10 +41,10 @@ rescue ActiveRecord::PendingMigrationError => e
   exit 1
 end
 RSpec.configure do |config|
-  # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
+  # Remove if not using ActiveRecord or fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
   # don`t reset db for each new transaction
-  config.use_transactional_fixtures = false
+  config.use_transactional_fixtures = true
   config.infer_spec_type_from_file_location!
   config.filter_rails_from_backtrace!
 end

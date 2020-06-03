@@ -1,5 +1,6 @@
 require "rails_helper"
 
+# rspec spec/model/user_spec.rb
 RSpec.describe User, :type => :model do
   let(:user1) { User.create!(username: 'user1') }
 
