@@ -5,4 +5,6 @@ class Event < ApplicationRecord
 
   scope :past, -> { where('event_when < ?', DateTime.now) }
   scope :upcoming, -> { where('event_when > ?', DateTime.now) }
+  scope :future, -> { where('events.event_when < ?', Time.now) }
+  scope :previous, -> { where('events.event_when > ?', Time.now) }
 end

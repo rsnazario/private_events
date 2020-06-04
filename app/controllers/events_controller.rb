@@ -1,8 +1,8 @@
 class EventsController < ApplicationController
   def index
     @event = Event.all
-    @upcoming_events = future
-    @previous_events = previous
+    @upcoming_events = @event.future
+    @previous_events = @event.previous
   end
 
   def new
@@ -23,13 +23,5 @@ class EventsController < ApplicationController
 
   def event_params
     params.require(:event).permit(:name, :description, :event_when)
-  end
-
-  def future
-    Event.where('events.event_when < ?', Time.now)
-  end
-
-  def previous
-    Event.where('events.event_when > ?', Time.now)
   end
 end
