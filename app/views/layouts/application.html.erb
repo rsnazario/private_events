@@ -13,10 +13,8 @@
     <nav class="flex space-between">
       <div>
         <%= link_to 'See all events', events_path %>
-        <% if current_user %>
-          <%= link_to 'Create Event', new_event_path %>
-          <%= link_to 'Profile', user_path(current_user) %>
-        <% end %>
+
+        <%= user_buttons %>
       </div>
 
       <div>
