@@ -5,6 +5,4 @@
 <small> Created by: <%= @event.creator.username%> </small>
 
 <h3> List of Attendants </h3>
-<% @event.guests.each do |line| %>
-  <%= line.username %>
-<% end %>
+<%= guest_list(@event) %>
