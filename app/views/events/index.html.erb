@@ -1,6 +1,9 @@
 <h1> All Events</h1>
 
+
 <h3>Events comming</h3>
+<%= upcoming_events_list(@event) %>
+
 <% Event.upcoming.each do |evento| %>
   <%= link_to evento.name, event_path(evento.id) %> <br>
 <% end %>
