@@ -1,17 +1,10 @@
 <h1>Welcome <%= @show_user.username %> </h1>
 
 <h3> Created Events </h3>
-<% @show_user.event_creator.each do |line| %>
-    <p> <%= link_to line.name, event_path(line.id) %> </p>
-<% end %>
+<%= created_list(@show_user) %>
 
 <h3> Attended Events </h3>
-<% @upcoming_events.each do |event| %>
-  <%= link_to event.name, event_path(event.id) %>
-<% end %>
+<%= attended_list(@upcoming_events) %>
 
-
-<h3> Will go to </h3>
-<% @previous_events.each do |event| %>
-  <%= link_to event.name, event_path(event.id) %>
-<% end %>
+<h3> Events To Go </h3>
+<%= to_go_list(@previous_events) %>
