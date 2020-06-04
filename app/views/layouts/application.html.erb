@@ -14,16 +14,12 @@
       <div>
         <%= link_to 'See all events', events_path %>
 
-        <%= user_buttons %>
+        <%= user_btn_actions %>
       </div>
 
       <div>
-        <% if current_user %>
-          <%= link_to 'LOGOUT', new_session_path, method: :delete %>
-        <% else %>
-          <%= link_to 'REGISTER', new_user_path %>
-          <%= link_to 'LOGIN', new_session_path %>
-        <% end %>
+        <%= btn_logout %>
+        <%= btn_signup %>
       </div>
     </nav>
 
