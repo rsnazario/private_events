@@ -1,0 +1,10 @@
+<h1>Welcome <%= @show_user.username %> </h1>
+
+<h3> Created Events </h3>
+<%= created_list(@show_user) %>
+
+<h3> Attended Events </h3>
+<%= attended_list(@upcoming_events) %>
+
+<h3> Events To Go </h3>
+<%= to_go_list(@previous_events) %>

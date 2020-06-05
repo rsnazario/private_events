@@ -1,0 +1,17 @@
+<h1> MAKE YOUR EVENT </h1>
+
+<%= form_with(model: @event) do |party| %>
+  <%= party.label(:name, "Event Name: ") %>
+  <%= party.text_field(:name) %>
+  <br><br>
+
+  <%= party.label(:event_when, "When will happen?" ) %>
+  <%= party.datetime_field(:event_when) %>
+  <br><br>
+
+  <%= party.label(:description, "How it will be: " ) %>
+  <%= party.text_area(:description) %>
+  <br><br>
+
+  <%= party.submit("Create Event") %>
+<% end %>

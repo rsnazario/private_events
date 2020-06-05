@@ -10,6 +10,21 @@
   </head>
 
   <body>
+    <nav class="flex space-between">
+      <div>
+        <%= link_to 'See all events', events_path %>
+
+        <%= user_btn_create_event %>
+        <%= user_btn_profile %>
+      </div>
+
+      <div>
+        <%= btn_register %>
+        <%= btn_logout %>
+        <%= btn_login %>
+      </div>
+    </nav>
+
     <%= yield %>
   </body>
 </html>
